@@ -1,2 +1,40 @@
-<header> This is first task</header>
-<body/>
+<head>
+	<title>This is first task</title>
+</head>
+
+<div id="articles"></div>
+
+
+<div id="newsTemplate" style="display:none">
+	<div id="news">
+	News:
+		<div id="title">
+			<b id="titleText">{0}</b>
+		</div>
+		<div id="author">
+			<i id="authorText">{1}</i>
+		</div>
+		<div id="url">
+			<a id="urlLink">{2}</a>
+		</div>
+		<br/>
+	</div>
+</div>
+
+<script>
+var template = document.getElementById("newsTemplate").innerHTML;
+
+for (i = 0; i < 3; i++) { 
+	var news = template;
+	
+	var data = 
+	{
+		title:"temp title",
+		author:"author",
+		url:"http://url.com"
+	}
+
+    document.getElementById("articles").innerHTML += news.replace('{0}',data.title).replace('{1}',data.author).replace('{2}',data.url);
+}
+
+</script>
