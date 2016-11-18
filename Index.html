@@ -1,40 +1,39 @@
+<script>
+var request = new Request('https://newsapi.org/v1/articles?source=bbc-news&apiKey=358b8ba532dc444f878cce74f34b7ffe'), init = {method:'GET',mode:'cors'};
+
+fetch(request,init)
+.then(respose => respose.json())
+.then(data => 
+{
+for (var i = 0; i <= data.articles.length - 1; i++) { 
+    document.getElementById("articles").innerHTML += document.getElementById("newsTemplate").innerHTML
+																							.replace('{title}',data.articles[i].title)
+																							.replace('{author}',data.articles[i].author)
+																							.replace(new RegExp('{url}'),data.articles[i].url);
+													};
+})
+.catch(err => console.log(err));
+</script>
+
 <head>
 	<title>This is first task</title>
 </head>
 
 <div id="articles"></div>
 
-
 <div id="newsTemplate" style="display:none">
 	<div id="news">
 	News:
 		<div id="title">
-			<b id="titleText">{0}</b>
+			<a id="urlLink" href="{url}">{title}</a>
 		</div>
 		<div id="author">
-			<i id="authorText">{1}</i>
-		</div>
-		<div id="url">
-			<a id="urlLink">{2}</a>
+			<i id="authorText">{author}</i>
 		</div>
 		<br/>
 	</div>
 </div>
 
-<script>
-var template = document.getElementById("newsTemplate").innerHTML;
 
-for (i = 0; i < 3; i++) { 
-	var news = template;
-	
-	var data = 
-	{
-		title:"temp title",
-		author:"author",
-		url:"http://url.com"
-	}
 
-    document.getElementById("articles").innerHTML += news.replace('{0}',data.title).replace('{1}',data.author).replace('{2}',data.url);
-}
 
-</script>
