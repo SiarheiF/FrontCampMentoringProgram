@@ -4,8 +4,7 @@ fetch(request,init)
 .then(respose => respose.json())
 .then(data => 
 {
-	for (let  article of data.articles) 
-	{ 
+	for (let  article of data.articles) { 
 		let url = article.url;
 		let title = article.title;
 		let author = article.author;
@@ -16,7 +15,7 @@ fetch(request,init)
 		let authorTemplate = document.createElement("div");
 		authorTemplate.innerHTML = `<i>${author}</i>`
 
-		document.getElementById("articles").appendChild(document.createTextNode("News"))
+		document.getElementById("articles").appendChild(document.createTextNode("News"));
 		document.getElementById("articles").appendChild(urlTempalate);
 		document.getElementById("articles").appendChild(authorTemplate);
 		document.getElementById("articles").appendChild(document.createElement("br"));
