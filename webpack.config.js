@@ -26,13 +26,10 @@ module.exports = {
       minChunks: 2,
 	  chunks:["script", "filldocument"]
     }),
-	new webpack.NoErrorsPlugin(),
-	new webpack.HotModuleReplacementPlugin()
+	new webpack.NoErrorsPlugin()
 	],
 	devServer:{
-		hot:true,
 		host:"localhost",
-		port:"6666",
-		contentBase:"~/build"
+		port:"4567",
 	}
 }
