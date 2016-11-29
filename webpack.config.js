@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-	entry: ["webpack-dev-server/client","./script"],
+	entry: ["./script"],
 	output:{
 		filename: "build.js"
 	},
