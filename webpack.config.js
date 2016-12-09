@@ -2,8 +2,10 @@
 const webpack = require('webpack');
 
 module.exports = {
-	entry: ["./script"],
+	entry: ["./js/script"],
 	output:{
+		path: "build",
+		publicPath:"/build/",
 		filename: "build.js"
 	},
 	modules:{
@@ -31,5 +33,6 @@ module.exports = {
 	devServer:{
 		host:"localhost",
 		port:"4567",
+		publicPath: "/build/"
 	}
 }
